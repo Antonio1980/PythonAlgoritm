@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>linked_list.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.ln { color: #999999; font-weight: normal; font-style: normal; }
+.s0 { color: rgb(0,0,128); font-weight: bold; }
+.s1 { color: rgb(0,0,0); }
+.s2 { color: rgb(0,128,128); font-weight: bold; }
+.s3 { color: rgb(128,128,128); font-style: italic; }
+.s4 { color: rgb(0,0,255); }
+</style>
+</head>
+<BODY BGCOLOR="#ffffff">
+<TABLE CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<TR><TD><CENTER>
+<FONT FACE="Arial, Helvetica" COLOR="#000000">
+linked_list.py</FONT>
+</center></TD></TR></TABLE>
+<pre>
+<a name="l1"><span class="ln">1    </span></a><span class="s0">from </span><span class="s1">lesson1.node </span><span class="s0">import </span><span class="s1">Node 
+<a name="l2"><span class="ln">2    </span></a> 
+<a name="l3"><span class="ln">3    </span></a> 
+<a name="l4"><span class="ln">4    </span></a></span><span class="s0">class </span><span class="s1">LinkedList: 
+<a name="l5"><span class="ln">5    </span></a>    </span><span class="s0">def </span><span class="s1">__init__(self): 
+<a name="l6"><span class="ln">6    </span></a>        self.head = </span><span class="s0">None</span><span class="s1"> 
+<a name="l7"><span class="ln">7    </span></a>        self.tail = </span><span class="s0">None</span><span class="s1"> 
+<a name="l8"><span class="ln">8    </span></a> 
+<a name="l9"><span class="ln">9    </span></a>    </span><span class="s0">def </span><span class="s1">add_in_tail(self, node): 
+<a name="l10"><span class="ln">10   </span></a>        </span><span class="s0">if </span><span class="s1">self.head </span><span class="s0">is None</span><span class="s1">: 
+<a name="l11"><span class="ln">11   </span></a>            self.head = node 
+<a name="l12"><span class="ln">12   </span></a>        </span><span class="s0">else</span><span class="s1">: 
+<a name="l13"><span class="ln">13   </span></a>            self.tail.next = node 
+<a name="l14"><span class="ln">14   </span></a>        self.tail = node 
+<a name="l15"><span class="ln">15   </span></a> 
+<a name="l16"><span class="ln">16   </span></a>    </span><span class="s0">def </span><span class="s1">print_all_nodes(self): 
+<a name="l17"><span class="ln">17   </span></a>        _head = self.head 
+<a name="l18"><span class="ln">18   </span></a>        </span><span class="s0">while </span><span class="s1">_head: 
+<a name="l19"><span class="ln">19   </span></a>            print(_head.value, end=</span><span class="s2">&quot;-&gt;&quot;</span><span class="s1">) 
+<a name="l20"><span class="ln">20   </span></a>            _head = _head.next 
+<a name="l21"><span class="ln">21   </span></a> 
+<a name="l22"><span class="ln">22   </span></a>    </span><span class="s0">def </span><span class="s1">find(self, value): 
+<a name="l23"><span class="ln">23   </span></a>        _head = self.head 
+<a name="l24"><span class="ln">24   </span></a>        </span><span class="s0">while </span><span class="s1">_head </span><span class="s0">is not None</span><span class="s1">: 
+<a name="l25"><span class="ln">25   </span></a>            </span><span class="s0">if </span><span class="s1">_head.value == value: 
+<a name="l26"><span class="ln">26   </span></a>                </span><span class="s0">return </span><span class="s1">_head 
+<a name="l27"><span class="ln">27   </span></a>            _head = _head.next 
+<a name="l28"><span class="ln">28   </span></a>        </span><span class="s0">return None</span><span class="s1"> 
+<a name="l29"><span class="ln">29   </span></a> 
+<a name="l30"><span class="ln">30   </span></a>    </span><span class="s3"># 1.1. Добавьте в класс LinkedList метод удаления одного узла по его значению.</span><span class="s1"> 
+<a name="l31"><span class="ln">31   </span></a>    </span><span class="s0">def </span><span class="s1">delete_node(self, value): 
+<a name="l32"><span class="ln">32   </span></a>        prev = </span><span class="s0">None</span><span class="s1"> 
+<a name="l33"><span class="ln">33   </span></a>        _head = self.head 
+<a name="l34"><span class="ln">34   </span></a>        </span><span class="s0">if </span><span class="s1">_head </span><span class="s0">is not None</span><span class="s1">: 
+<a name="l35"><span class="ln">35   </span></a>            </span><span class="s0">if </span><span class="s1">_head.value == value: 
+<a name="l36"><span class="ln">36   </span></a>                self.head = _head.next 
+<a name="l37"><span class="ln">37   </span></a>                _head = </span><span class="s0">None</span><span class="s1"> 
+<a name="l38"><span class="ln">38   </span></a>                </span><span class="s0">return</span><span class="s1"> 
+<a name="l39"><span class="ln">39   </span></a>        </span><span class="s0">while </span><span class="s1">(_head </span><span class="s0">is not None</span><span class="s1">): 
+<a name="l40"><span class="ln">40   </span></a>            </span><span class="s0">if </span><span class="s1">_head.value == value: 
+<a name="l41"><span class="ln">41   </span></a>                </span><span class="s0">break</span><span class="s1"> 
+<a name="l42"><span class="ln">42   </span></a>            prev = _head 
+<a name="l43"><span class="ln">43   </span></a>            _head = _head.next 
+<a name="l44"><span class="ln">44   </span></a>        </span><span class="s0">if </span><span class="s1">prev.next </span><span class="s0">is not None</span><span class="s1">: 
+<a name="l45"><span class="ln">45   </span></a>            prev.next = _head.next 
+<a name="l46"><span class="ln">46   </span></a>        _head = </span><span class="s0">None</span><span class="s1"> 
+<a name="l47"><span class="ln">47   </span></a> 
+<a name="l48"><span class="ln">48   </span></a>    </span><span class="s3"># 1.2. Добавьте в класс LinkedList метод удаления всех узлов по конкретному значению.</span><span class="s1"> 
+<a name="l49"><span class="ln">49   </span></a>    </span><span class="s0">def </span><span class="s1">delete_nodes(self, value): 
+<a name="l50"><span class="ln">50   </span></a>        </span><span class="s0">while </span><span class="s1">self.find(value) </span><span class="s0">is not None</span><span class="s1">: 
+<a name="l51"><span class="ln">51   </span></a>            self.delete_node(value) 
+<a name="l52"><span class="ln">52   </span></a> 
+<a name="l53"><span class="ln">53   </span></a>    </span><span class="s3"># 1.3. Добавьте в класс LinkedList метод очистки всего содержимого (создание пустого списка).</span><span class="s1"> 
+<a name="l54"><span class="ln">54   </span></a>    </span><span class="s0">def </span><span class="s1">delete_all_nodes(self): 
+<a name="l55"><span class="ln">55   </span></a>        _head = self.head 
+<a name="l56"><span class="ln">56   </span></a>        </span><span class="s0">if </span><span class="s1">_head </span><span class="s0">is not None</span><span class="s1">: 
+<a name="l57"><span class="ln">57   </span></a>            </span><span class="s0">while </span><span class="s1">_head </span><span class="s0">is not None</span><span class="s1">: 
+<a name="l58"><span class="ln">58   </span></a>                temp = _head.next 
+<a name="l59"><span class="ln">59   </span></a>                _head.value = </span><span class="s0">None</span><span class="s1"> 
+<a name="l60"><span class="ln">60   </span></a>                _head = temp 
+<a name="l61"><span class="ln">61   </span></a> 
+<a name="l62"><span class="ln">62   </span></a>    </span><span class="s3"># 1.4. Добавьте в класс LinkedList метод поиска всех узлов по конкретному значению (возвращается список/массив найденных узлов).</span><span class="s1"> 
+<a name="l63"><span class="ln">63   </span></a>    </span><span class="s0">def </span><span class="s1">find_nodes(self, value): 
+<a name="l64"><span class="ln">64   </span></a>        new_list = LinkedList() 
+<a name="l65"><span class="ln">65   </span></a>        _head = self.head 
+<a name="l66"><span class="ln">66   </span></a>        </span><span class="s0">while </span><span class="s1">_head </span><span class="s0">is not None</span><span class="s1">: 
+<a name="l67"><span class="ln">67   </span></a>            </span><span class="s0">if </span><span class="s1">_head.value == value: 
+<a name="l68"><span class="ln">68   </span></a>                new_list.add_in_tail(_head) 
+<a name="l69"><span class="ln">69   </span></a>            _head = _head.next 
+<a name="l70"><span class="ln">70   </span></a>        </span><span class="s0">return </span><span class="s1">new_list 
+<a name="l71"><span class="ln">71   </span></a> 
+<a name="l72"><span class="ln">72   </span></a>    </span><span class="s3"># 1.5. Добавьте в класс LinkedList метод вычисления длины списка.</span><span class="s1"> 
+<a name="l73"><span class="ln">73   </span></a>    </span><span class="s0">def </span><span class="s1">list_size(self): 
+<a name="l74"><span class="ln">74   </span></a>        num = </span><span class="s4">0</span><span class="s1"> 
+<a name="l75"><span class="ln">75   </span></a>        _head = self.head 
+<a name="l76"><span class="ln">76   </span></a>        </span><span class="s0">while </span><span class="s1">_head </span><span class="s0">is not None</span><span class="s1">: 
+<a name="l77"><span class="ln">77   </span></a>            num += </span><span class="s4">1</span><span class="s1"> 
+<a name="l78"><span class="ln">78   </span></a>            _head = _head.next 
+<a name="l79"><span class="ln">79   </span></a>        </span><span class="s0">return </span><span class="s1">num 
+<a name="l80"><span class="ln">80   </span></a> 
+<a name="l81"><span class="ln">81   </span></a>    </span><span class="s3"># 1.6. Добавьте в класс LinkedList метод вставки узла после заданного узла.</span><span class="s1"> 
+<a name="l82"><span class="ln">82   </span></a>    </span><span class="s0">def </span><span class="s1">add_after(self, node1, node2): 
+<a name="l83"><span class="ln">83   </span></a>        </span><span class="s0">if </span><span class="s1">node1 </span><span class="s0">and </span><span class="s1">node2 </span><span class="s0">is not None</span><span class="s1">: 
+<a name="l84"><span class="ln">84   </span></a>            node2.next = node1.next 
+<a name="l85"><span class="ln">85   </span></a>            node1.next = node2 
+<a name="l86"><span class="ln">86   </span></a> 
+<a name="l87"><span class="ln">87   </span></a>    </span><span class="s3"># 1.7. Напишите функцию, которая получает на вход два связанных списка,</span><span class="s1"> 
+<a name="l88"><span class="ln">88   </span></a>    </span><span class="s3"># состоящие из целых значений, и если их длины равны, возвращает список,</span><span class="s1"> 
+<a name="l89"><span class="ln">89   </span></a>    </span><span class="s3"># каждый элемент которого равен сумме соответствующих элементов входных списков.</span><span class="s1"> 
+<a name="l90"><span class="ln">90   </span></a>    </span><span class="s0">def </span><span class="s1">merge_lists(self, list1, list2): 
+<a name="l91"><span class="ln">91   </span></a>        </span><span class="s0">if </span><span class="s1">list1.head </span><span class="s0">and </span><span class="s1">list2.head </span><span class="s0">is not None</span><span class="s1">: 
+<a name="l92"><span class="ln">92   </span></a>            list = LinkedList() 
+<a name="l93"><span class="ln">93   </span></a>            </span><span class="s0">if </span><span class="s1">list1.list_size() == list2.list_size(): 
+<a name="l94"><span class="ln">94   </span></a>                </span><span class="s0">while </span><span class="s1">list1.head </span><span class="s0">and </span><span class="s1">list2.head </span><span class="s0">is not None</span><span class="s1">: 
+<a name="l95"><span class="ln">95   </span></a>                    list.add_in_tail(Node(list1.head.value + list2.head.value)) 
+<a name="l96"><span class="ln">96   </span></a>                    list1.head = list1.head.next 
+<a name="l97"><span class="ln">97   </span></a>                    list2.head = list2.head.next 
+<a name="l98"><span class="ln">98   </span></a>                </span><span class="s0">return </span><span class="s1">list 
+<a name="l99"><span class="ln">99   </span></a>            </span><span class="s0">else</span><span class="s1">: 
+<a name="l100"><span class="ln">100  </span></a>                </span><span class="s0">raise </span><span class="s1">Exception 
+<a name="l101"><span class="ln">101  </span></a>        </span><span class="s0">else</span><span class="s1">: 
+<a name="l102"><span class="ln">102  </span></a>            </span><span class="s0">return None</span><span class="s1"> 
+<a name="l103"><span class="ln">103  </span></a></span></pre>
+</body>
+</html>
