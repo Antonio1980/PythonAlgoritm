@@ -31,21 +31,22 @@ class LinkedList:
         return None
 
     def delete_node(self, value):
-        prev = None
+        _prev = None
         _head = self.head
         if _head is not None:
             if _head.value == value:
                 self.head = _head.next
                 _head = None
-                return
-        while (_head is not None):
+        while _head is not None:
             if _head.value == value:
+                _prev = _head
+                self.head = _prev.next
                 break
-            prev = _head
+            _prev = _head
             _head = _head.next
-        if prev.next is not None:
-            prev.next = _head.next
-        _head = None
+        if _prev.next is not None:
+            self.head = _prev
+
 
     def delete_nodes(self, value):
         while self.find(value) is not None:

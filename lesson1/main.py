@@ -2,6 +2,7 @@ from lesson1.linked_list import LinkedList
 from lesson1.node import Node
 import unittest
 
+
 class Tester(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -16,7 +17,9 @@ class Tester(unittest.TestCase):
         cls.s_list.add_in_tail(cls.n1)
         cls.s_list.add_in_tail(cls.n2)
         cls.s_list.add_in_tail(Node(128))
+        cls.s_list.print_all_nodes()
         cls.s_list.delete_node(128)
+        cls.s_list.print_all_nodes()
         if cls.s_list.find(128) is None:
             print("test_delete_node - PASSED")
 
@@ -95,4 +98,4 @@ class Tester(unittest.TestCase):
 
 if __name__ == '__main__':
     Tester.setUpClass()
-    Tester.test_add_first()
+    Tester.test_delete_node()
