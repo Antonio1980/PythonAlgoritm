@@ -4,6 +4,11 @@ import unittest
 
 
 class Tester(unittest.TestCase):
+    n1 = None
+    n2 = None
+    n3 = None
+    s_list = None
+
     @classmethod
     def setUpClass(cls):
         cls.n1 = Node(12)
