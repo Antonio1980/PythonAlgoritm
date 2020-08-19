@@ -219,3 +219,5 @@ $RECYCLE.BIN/
 /venv/
 .idea/workspace.xml
 *.xml
+/*.xml/*
+*/.idea/*
