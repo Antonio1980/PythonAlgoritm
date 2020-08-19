@@ -217,3 +217,7 @@ $RECYCLE.BIN/
 
 /.idea/
 /venv/
+*.pyc
+*.xml
+.idea/workspace.xml
+lesson1/__pycache__/linked_list.cpython-36.pyc
