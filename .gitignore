@@ -216,3 +216,5 @@ $RECYCLE.BIN/
 *.lnk
 
 /.idea/
+/venv/
+/venv/
